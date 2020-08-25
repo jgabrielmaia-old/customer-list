@@ -1,35 +1,48 @@
 <div class="container">
     <h2>Cadastro de Usuários</h2>
-    <form>
+    <form #form="ngForm">
         <div class="form-group">
             <label for="name">Nome</label>
-            <input id="name" name="name" class="form-control"/>
+            <input id="name" name="name" class="form-control" [(ngModel)]="userData.name"/>
 
             <label for="birth">Nascimento</label>
-            <input id="birth" name="birth" type="date" class="form-control"/>
-            
+            <input 
+                id="birth" 
+                class="form-control" 
+                [ngModel]="userData.birth | date:'yyyy-MM-dd'" 
+                (ngModelChange)="userData.birth = $event" 
+                type="date" 
+                name="userData.birth"/>
+
             <label for="first-order">Primeiro Pedido</label>
-            <input id="first-order" name="first-order" type="date" class="form-control"/>
+            <input 
+                id="first-order" 
+                class="form-control" 
+                [ngModel]="userData.firstOrder | date:'yyyy-MM-dd'" 
+                (ngModelChange)="userData.firstOrder = $event" 
+                type="date" 
+                name="userData.firstOrder"/>
             
             <label for="order-count">Número de Pedidos</label>
-            <input id="order-count" name="order-count" class="form-control"/>
+            <input id="order-count" name="orderCount" class="form-control" [(ngModel)]="userData.orderCount"/>
             
             <label for="phone">Telefone</label>
-            <input id="phone" name="phone" class="form-control"/>
+            <input id="phone" name="phone" class="form-control" [(ngModel)]="userData.phone"/>
 
             <label for="neighborhood">Bairro</label>
-            <input id="neighborhood" name="neighborhood" class="form-control"/>
+            <input id="neighborhood" name="neighborhood" class="form-control" [(ngModel)]="userData.neighborhood"/>
 
             <label for="street">Rua</label>
-            <input id="street" name="street" class="form-control"/>
+            <input id="street" name="street" class="form-control" [(ngModel)]="userData.street"/>
 
             <label for="number">Número</label>
-            <input id="number" name="number" class="form-control"/>
+            <input id="number" name="streetNumber" class="form-control" [(ngModel)]="userData.streetNumber"/>
 
             <label for="detail">Complemento</label>
-            <input id="detail" name="detail" class="form-control"/>
+            <input id="detail" name="detail" class="form-control" [(ngModel)]="userData.detail"/>
             
             <button class="btn btn-primary">Cadastrar</button>
         </div>
     </form>
+    <div>{{ userData | json }}</div>
 </div>

@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "customer-list"
+    }
+  },
+  "defaultProject": "customer-list",
+  "cli": {
+    "analytics": false
+  }
 }
