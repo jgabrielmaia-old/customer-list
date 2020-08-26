@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserData } from './../data/user-data';
 import { NgForm } from '@angular/forms';
+import { UserService } from '../../core/services/user/user.service' ;
 
 @Component({
   selector: 'app-user-data-form',
@@ -21,13 +22,17 @@ export class UserDataFormComponent implements OnInit {
     detail: ``
   };
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(form:NgForm) {
     console.log('Submitted: ', form.valid);
+    this.userService.postUserDataForm(this.userData).subscribe(
+      result => console.log('Success! ', result),
+      error => console.log('Error! ', error)
+    );
   }
 
 }
