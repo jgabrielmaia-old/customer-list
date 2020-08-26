@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserData } from './../data/user-data';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-user-data-form',
@@ -23,6 +24,10 @@ export class UserDataFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(form:NgForm) {
+    console.log('Submitted: ', form.valid);
   }
 
 }
