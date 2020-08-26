@@ -9,7 +9,7 @@ import { UserData } from './../data/user-data';
 export class UserDataFormComponent implements OnInit {
 
   userData : UserData = {
-    name: `Default`,
+    name: ``,
     birth: new Date("1970-01-01"),
     firstOrder: new Date("1970-01-01"),
     orderCount: 0,

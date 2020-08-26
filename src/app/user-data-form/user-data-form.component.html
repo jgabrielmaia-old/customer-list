@@ -2,7 +2,7 @@
     <div class="container">
         <h1 class="display-4">Cadastro de Usuário</h1>
         <hr class="my-4"/>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <p class="lead">Informações básicas mas cruciais para manter contato com nossos maiores investidores</p>
         <span>Photo by <a href="https://unsplash.com/@charissek?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Charisse Kenion</a> on <a href="https://unsplash.com/s/photos/chocolate?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
     </div>
 </div>
@@ -11,7 +11,8 @@
         <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">Nome</label>
             <div class="col-sm-10">
-                <input id="name" name="name" class="form-control" [(ngModel)]="userData.name" />
+                <input id="name" name="name" class="form-control" [(ngModel)]="userData.name" required #nameField="ngModel"/>
+                <div [hidden]="nameField.valid || nameField.untouched" class="alert alert-danger">Insira um nome</div>
             </div>
         </div>
         <div class="form-group row">
