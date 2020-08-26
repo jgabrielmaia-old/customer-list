@@ -42,7 +42,7 @@
             <label for="order-count" class="col-sm-2 col-form-label">Número de Pedidos</label>
 
             <div class="col-sm-10">
-                <input id="order-count" name="orderCount" class="form-control" [(ngModel)]="userData.orderCount" />
+                <input id="order-count" name="orderCount" class="form-control" [(ngModel)]="userData.orderCount" type="number" min="0" />
             </div>
         </div>
         <div class="form-group row">

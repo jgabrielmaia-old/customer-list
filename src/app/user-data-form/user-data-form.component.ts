@@ -11,14 +11,14 @@ export class UserDataFormComponent implements OnInit {
 
   userData : UserData = {
     name: ``,
-    birth: new Date("1970-01-01"),
-    firstOrder: new Date("1970-01-01"),
-    orderCount: 0,
-    phone: `(xx) x xxxx - xxxx`,
-    neighborhood: `Default`,
-    street: `Default`,
-    streetNumber: `1`,
-    detail: `Default`
+    birth: new Date("2000-01-01"),
+    firstOrder: new Date(),
+    orderCount: 1,
+    phone: ``,
+    neighborhood: ``,
+    street: ``,
+    streetNumber: ``,
+    detail: ``
   };
 
   constructor() { }
