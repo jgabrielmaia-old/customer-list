@@ -6,9 +6,6 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-
-  constructor() { }
-
   postUserDataForm(userData: UserData) : Observable<UserData>{
     return of(userData);
   }

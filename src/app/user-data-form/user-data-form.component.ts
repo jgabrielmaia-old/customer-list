@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserData } from './../data/user-data';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../../core/services/user/user.service' ;
@@ -8,7 +8,7 @@ import { UserService } from '../../core/services/user/user.service' ;
   templateUrl: './user-data-form.component.html',
   styleUrls: ['./user-data-form.component.css']
 })
-export class UserDataFormComponent implements OnInit {
+export class UserDataFormComponent {
 
   userData : UserData = {
     name: ``,
@@ -24,14 +24,14 @@ export class UserDataFormComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
-  }
-
   onSubmit(form:NgForm) {
-    console.log('Submitted: ', form.valid);
+    if (form.valid) {
+      alert('Submitted');
+    }
+
     this.userService.postUserDataForm(this.userData).subscribe(
-      result => console.log('Success! ', result),
-      error => console.log('Error! ', error)
+      result => alert('Success! ' + result),
+      error => alert('Error! ' + error)
     );
   }
 
