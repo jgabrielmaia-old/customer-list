@@ -1,0 +1,14 @@
+.jumbotron {
+    background-image: url("../../assets/images/charisse-kenion-tWe8ib-cnXY-unsplash.jpg");
+    background-size: cover;
+    color: #fff; 
+}
+
+.jumbotron hr {
+    border: 1px solid rgba(255,255,255,.5);
+}
+
+.jumbotron a {
+    color: #eee;
+    text-decoration: underline;
+}
