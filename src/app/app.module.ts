@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { UserDataFormComponent } from './user-data-form/user-data-form.component';
+import { CustomerDataFormComponent } from './customer-data-form/customer-data-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserDataFormComponent
+    CustomerDataFormComponent
   ],
   imports: [
     BrowserModule,

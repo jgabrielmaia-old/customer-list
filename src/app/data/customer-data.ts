@@ -1,4 +1,4 @@
-export interface UserData {
+export interface CustomerData {
     name: string;
     birth: Date;
     firstOrder: Date;
