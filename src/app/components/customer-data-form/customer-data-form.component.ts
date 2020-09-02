@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CustomerData } from '../data/customer-data';
+import { CustomerData } from '../../data/customer-data';
 import { NgForm } from '@angular/forms';
-import { CustomerService } from '../../core/services/customer/customer.service' ;
+import { CustomerService } from '../../../core/services/customer/customer.service' ;
 
 @Component({
   selector: 'app-customer-data-form',
