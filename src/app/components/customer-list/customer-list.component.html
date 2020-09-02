@@ -7,7 +7,7 @@
     </div>
 </div>
 <div class="container"> 
-    <div class="card-deck justify-content-between">
-        <app-customer-card [customer]='customer' *ngFor="let customer of customers$ | async"></app-customer-card>
+    <div class="card-deck justify-content-between" *ngIf="customers$ | async as customers">
+        <app-customer-card [customer]='customer' *ngFor="let customer of customers"></app-customer-card>
     </div>
 </div>
