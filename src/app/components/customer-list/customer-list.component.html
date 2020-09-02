@@ -1,3 +1,13 @@
-<div *ngFor="let customer of customers$ | async">
-    <app-customer-card [customer]='customer'></app-customer-card>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Clientes</h1>
+        <hr class="my-4"/>
+        <p class="lead">Listagem de clientes</p>
+        <span>Photo by <a href="https://unsplash.com/@miinyuii?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Duy Pham</a> on <a href="https://unsplash.com/s/photos/group?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+    </div>
+</div>
+<div class="container">
+    <div *ngFor="let customer of customers$ | async">
+        <app-customer-card [customer]='customer'></app-customer-card>
+    </div>
 </div>

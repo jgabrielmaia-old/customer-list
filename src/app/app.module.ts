@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
+import { Telephone, CartCheck, Calendar2CheckFill, GeoAltFill } from 'ngx-bootstrap-icons';
 
 import { AppComponent } from './app.component';
 import { CustomerDataFormComponent } from './components/customer-data-form/customer-data-form.component';
@@ -10,21 +12,36 @@ import { CustomerCardComponent } from './components/customer-card/customer-card.
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt);
+
+const icons = {
+  Telephone,
+  CartCheck,
+  Calendar2CheckFill,
+  GeoAltFill
+};
+
+
 @NgModule({
   declarations: [
     AppComponent,
     CustomerDataFormComponent,
     CustomerCardComponent,
     CustomerListComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxBootstrapIconsModule.pick(icons)
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

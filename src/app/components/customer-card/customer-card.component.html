@@ -1,13 +1,43 @@
-<div class="col-md-4">
-    <h1>{{customer.name}}</h1>
-    <p>{{customer.birth}}</p>
-    <p>{{customer.firstOrder}}</p>
-    <p>{{customer.orderCount}}</p>
-    <p>{{customer.phone}}</p>
-    <p>
-        {{customer.neighborhood}}, 
-        {{customer.street}}, 
-        {{customer.streetNumber}}, 
-        {{customer.detail}}
-    </p>
+<div class="col-md-4 card" style="width: 18rem;">
+    <div class="card-body">
+        <div class="row">
+            <h4 class="card-title">{{customer.name}} <span class="badge badge-primary badge-pill">{{customer.orderCount}}</span></h4> 
+        <div>
+        <h5 class="card-subtitle mb-2 text-muted">{{customer.birth | date:'longDate' | titlecase}}</h5>
+        <ul class="card-text list-group list-group-flush">
+            <li class="list-group-item ">
+                <i-bs
+                    name="calendar2-check-fill"
+                    class="text-primary"
+                    width="1.5rem"
+                    height="1.5rem">
+                </i-bs>
+
+                <p>{{customer.firstOrder | date:'fullDate' | titlecase}}</p>
+            </li>
+            <li class="list-group-item">
+                <i-bs
+                    name="telephone"
+                    class="text-primary"
+                    width="1.5rem"
+                    height="1.5rem">
+                </i-bs>
+                <p>{{customer.phone}}</p>
+            </li>
+            <li class="list-group-item">
+                <i-bs
+                    name="geo-alt-fill"
+                    class="text-primary"
+                    width="1.5rem"
+                    height="1.5rem">
+                </i-bs>
+                <p>
+                    {{customer.neighborhood}}, 
+                    {{customer.street}}, 
+                    {{customer.streetNumber}}, 
+                    {{customer.detail}}
+                </p>
+            </li>
+        </ul>
+    </div>
 </div>

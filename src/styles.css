@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+.jumbotron h1,
+.jumbotron p,
+.jumbotron span {
+    color: #fff;
+}
+.jumbotron hr {
+    border: 1px solid rgba(255,255,255,.5);
+}
+
+.jumbotron a {
+    color: #eee;
+    text-decoration: underline;
+}
+
+.field-error{
+    border: 1px solid red;
+}

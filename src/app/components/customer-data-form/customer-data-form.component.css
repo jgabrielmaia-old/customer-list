@@ -3,21 +3,3 @@
     background-color: #4D2E07;
     background-size: auto;
 }
-
-.jumbotron h1,
-.jumbotron p,
-.jumbotron span {
-    color: #fff;
-}
-.jumbotron hr {
-    border: 1px solid rgba(255,255,255,.5);
-}
-
-.jumbotron a {
-    color: #eee;
-    text-decoration: underline;
-}
-
-.field-error{
-    border: 1px solid red;
-}
