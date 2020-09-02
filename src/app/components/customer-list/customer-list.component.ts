@@ -10,7 +10,7 @@ import { CustomerService } from 'src/core/services/customer/customer.service';
 })
 export class CustomerListComponent implements OnInit {
 
-  customers$ : Observable<CustomerData>;
+  customers$ : Observable<CustomerData[]>;
 
   constructor(private customerService: CustomerService) { }
 

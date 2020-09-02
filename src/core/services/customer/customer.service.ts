@@ -10,8 +10,8 @@ export class CustomerService {
   private customersUrl = 'assets/data/customer.json';
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<CustomerData> {
-    return this.http.get<CustomerData>(this.customersUrl);
+  getAll(): Observable<CustomerData[]> {
+    return this.http.get<CustomerData[]>(this.customersUrl);
   }
 
   postCustomerDataForm(customerData: CustomerData) : Observable<CustomerData>{
