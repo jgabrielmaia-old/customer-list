@@ -4,7 +4,7 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 import { CustomerDataFormComponent } from './components/customer-data-form/customer-data-form.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
-const routes: Routes = [ 
+const routes: Routes = [
   { path: '', redirectTo: '/clientes', pathMatch: 'full' },
   { path: 'clientes', component: CustomerListComponent},
   { path: 'cadastro', component: CustomerDataFormComponent},
