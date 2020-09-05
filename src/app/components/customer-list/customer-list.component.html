@@ -2,12 +2,26 @@
     <div class="container">
         <h1 class="display-4">Clientes</h1>
         <hr class="my-4"/>
-        <p class="lead">Listagem de clientes</p>
-        <span>Photo by <a href="https://unsplash.com/@miinyuii?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Duy Pham</a> on <a href="https://unsplash.com/s/photos/group?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="customer-search">@</span>
+            </div>
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Nome de cliente" 
+                aria-label="customer-name"
+                aria-describedby="customer-search"
+                [(ngModel)]='searchFilter'>
+        </div>
+        <span>Photo by 
+            <a href="https://unsplash.com/@miinyuii?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Duy Pham</a> 
+            on <a href="https://unsplash.com/s/photos/group?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+        </span>
     </div>
 </div>
 <div class="container"> 
-    <div class="card-deck justify-content-between" *ngIf="customers$ | async as customers">
-        <app-customer-card [customer]='customer' *ngFor="let customer of customers"></app-customer-card>
+    <div class="card-deck justify-content-between" *ngIf="customers && customers.length">
+        <app-customer-card [customer]='customer' *ngFor="let customer of filteredCustomers"></app-customer-card>
     </div>
 </div>

@@ -4,3 +4,8 @@
     background-size: cover; 
     background-position: center; 
 }
+
+.input-group-text{
+    background-color: #007bff;
+    border: 1px solid #007bff;
+}
