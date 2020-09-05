@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { CustomerData } from '../../data/customer-data';
 import { CustomerService } from 'src/core/services/customer/customer.service';
 
@@ -8,13 +7,20 @@ import { CustomerService } from 'src/core/services/customer/customer.service';
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })
-export class CustomerListComponent implements OnInit {
+export class CustomerListComponent implements OnInit, AfterViewInit {
   customers : CustomerData[];
   filteredCustomers: CustomerData[];
+  
+  @ViewChild('searchFilterRef') 
+  searchFilterRef : ElementRef;
 
   private _listFilter: string;
 
   constructor(private customerService: CustomerService) { }
+  
+  ngAfterViewInit(): void {
+    this.searchFilterRef?.nativeElement.focus();
+  }
 
   ngOnInit(): void {
     this.customerService.getAll().subscribe(

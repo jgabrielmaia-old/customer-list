@@ -8,11 +8,12 @@
             </div>
             <input 
                 type="text" 
-                class="form-control" 
+                #searchFilterRef
+                class="form-control input-group-search-input" 
                 placeholder="Nome de cliente" 
                 aria-label="customer-name"
                 aria-describedby="customer-search"
-                [(ngModel)]='searchFilter'>
+                [(ngModel)]='searchFilter'/>
         </div>
         <span>Photo by 
             <a href="https://unsplash.com/@miinyuii?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Duy Pham</a> 
