@@ -11,6 +11,7 @@ import { CustomerDataFormComponent } from './components/customer-data-form/custo
 import { CustomerCardComponent } from './components/customer-card/customer-card.component';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SearchComponent } from './components/search/search.component';
 
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -33,6 +34,7 @@ const icons = {
     CustomerCardComponent,
     CustomerListComponent,
     NotFoundComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

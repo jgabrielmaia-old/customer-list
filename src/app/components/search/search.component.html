@@ -1,0 +1,13 @@
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="customer-search">@</span>
+    </div>
+    <input
+        type="text"
+        #searchFilterRef
+        class="form-control input-group-search-input"
+        placeholder="Nome de cliente"
+        aria-label="customer-name"
+        aria-describedby="customer-search"
+        [(ngModel)]='searchFilter'/>
+</div>

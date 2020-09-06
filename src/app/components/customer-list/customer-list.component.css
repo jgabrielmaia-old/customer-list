@@ -1,15 +1,6 @@
 .jumbotron {
     background-image: url("../../../assets/images/duy-pham-Cecb0_8Hx-o-unsplash.jpg");
     background-color: #4D2E07;
-    background-size: cover; 
-    background-position: center; 
-}
-
-.input-group-text{
-    background-color: #007bff;
-    border: 1px solid #007bff;
-}
-
-.input-group-search-input{
-    border:none;
+    background-size: cover;
+    background-position: center;
 }
