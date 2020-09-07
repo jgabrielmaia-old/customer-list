@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, AfterViewInit, Output, EventEmitter } fro
 import { CustomerData } from '../../data/customer-data';
 import { CustomerService } from 'src/core/services/customer/customer.service';
 import { SearchComponent } from '../search/search.component';
+import { SearchParamsService } from 'src/core/services/search-params/search-params.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -17,13 +18,16 @@ export class CustomerListComponent implements OnInit, AfterViewInit {
 
   private searchFilter: string;
 
-  constructor(private customerService: CustomerService) { }
+  constructor(
+    private customerService: CustomerService,
+    private searchParamsService: SearchParamsService
+  ) { }
 
   ngOnInit(): void {
     this.customerService.getAll().subscribe(
       (customers: CustomerData[]) => {
         this.customers = customers;
-        this.performFilter(this.searchFilter);
+        this.searchComponent.searchFilter = this.searchParamsService.filterBy;
       }
     );
   }
@@ -43,5 +47,6 @@ export class CustomerListComponent implements OnInit, AfterViewInit {
 
   onValueChange(value: string) : void {
     this.performFilter(value);
+    this.searchParamsService.filterBy = value;
   }
 }

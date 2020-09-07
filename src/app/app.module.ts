@@ -17,6 +17,9 @@ import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 
+import { CustomerService } from 'src/core/services/customer/customer.service';
+import { SearchParamsService } from 'src/core/services/search-params/search-params.service';
+
 registerLocaleData(localePt);
 
 const icons = {
@@ -43,7 +46,11 @@ const icons = {
     AppRoutingModule,
     NgxBootstrapIconsModule.pick(icons)
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
+  providers: [
+    CustomerService,
+    SearchParamsService,
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

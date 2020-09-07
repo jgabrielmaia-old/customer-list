@@ -9,6 +9,9 @@ export class SearchComponent implements AfterViewInit {
   @ViewChild('searchFilterRef')
   searchFilterRef : ElementRef;
 
+  @Output()
+  valueChange: EventEmitter<string> = new EventEmitter<string>();
+
   private _searchFilter: string;
   get searchFilter(): string {
     return this._searchFilter;
@@ -18,9 +21,6 @@ export class SearchComponent implements AfterViewInit {
     this._searchFilter = value;
     this.valueChange.emit(value);
   }
-
-  @Output()
-  valueChange: EventEmitter<string> = new EventEmitter<string>();
 
   ngAfterViewInit(): void {
     this.searchFilterRef?.nativeElement.focus();
