@@ -9,14 +9,12 @@ import { SearchParamsService } from 'src/core/services/search-params/search-para
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })
-export class CustomerListComponent implements OnInit, AfterViewInit {
+export class CustomerListComponent implements OnInit {
   customers : CustomerData[];
   filteredCustomers: CustomerData[];
 
   @ViewChild('searchComponent')
   searchComponent: SearchComponent;
-
-  private searchFilter: string;
 
   constructor(
     private customerService: CustomerService,
@@ -27,13 +25,9 @@ export class CustomerListComponent implements OnInit, AfterViewInit {
     this.customerService.getAll().subscribe(
       (customers: CustomerData[]) => {
         this.customers = customers;
-        this.searchComponent.searchFilter = this.searchParamsService.filterBy;
+        this.searchComponent.searchFilter = this.searchParamsService?.filterBy;
       }
     );
-  }
-
-  ngAfterViewInit(): void {
-    this.searchFilter = this.searchComponent.searchFilter;
   }
 
   performFilter(filterBy?: string){
