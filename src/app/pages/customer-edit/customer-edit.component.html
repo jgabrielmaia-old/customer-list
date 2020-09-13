@@ -7,5 +7,5 @@
     </div>
 </div>
 <div class="container">
-    <app-customer-data-form [customerData]='customerData'></app-customer-data-form>
+    <app-customer-data-form [customerData]=' customerData$ | async' (customerSubmit)='updateSubmit($event)'></app-customer-data-form>
 </div>

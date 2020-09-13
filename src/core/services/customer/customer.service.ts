@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CustomerService {
+
   private customersUrl = 'http://localhost:5000/api/customers';
 
   constructor(private http: HttpClient) { }
@@ -15,12 +16,20 @@ export class CustomerService {
     return this.http.get<CustomerData[]>(this.customersUrl);
   }
 
+  get(id: string) {
+    return this.http.get<CustomerData>(`${this.customersUrl}/${id}`);
+  }
+
   save(customerData: CustomerData) : Observable<CustomerData>{
     return this.http.post<CustomerData>(this.customersUrl, customerData);
   }
 
+  update(customerData: CustomerData) {
+    return this.http.put<CustomerData>(`${this.customersUrl}/${customerData.id}`, customerData);
+  }
+
   increaseOrder(customerData: CustomerData) : Observable<CustomerData>{
     const increasedOrderData = {orderCount: customerData.orderCount++,...customerData };
-    return this.http.put<CustomerData>(`${this.customersUrl}/${customerData.id}`, increasedOrderData);
+    return this.update(increasedOrderData);
   }
 }
