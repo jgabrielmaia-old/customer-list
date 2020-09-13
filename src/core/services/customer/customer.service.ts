@@ -21,7 +21,6 @@ export class CustomerService {
 
   increaseOrder(customerData: CustomerData) : Observable<CustomerData>{
     const increasedOrderData = {orderCount: customerData.orderCount++,...customerData };
-    console.log(increasedOrderData);
-    return this.http.put<CustomerData>(`${this.customersUrl}/${customerData['id']}`, increasedOrderData);
+    return this.http.put<CustomerData>(`${this.customersUrl}/${customerData.id}`, increasedOrderData);
   }
 }

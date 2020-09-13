@@ -13,6 +13,6 @@ export class CustomerCardComponent {
 
   constructor(private customerService: CustomerService) { }
   increaseOrder(){
-    this.customerService.increaseOrder(this.customer).subscribe(s => console.log(s));
+    this.customerService.increaseOrder(this.customer).subscribe();
   }
 }
