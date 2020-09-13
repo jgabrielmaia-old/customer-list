@@ -11,7 +11,7 @@
     </div>
 </div>
 <div class="container">
-    <div class="card-deck justify-content-between" *ngIf="customers && customers.length">
+    <div class="card-deck justify-content-around" *ngIf="customers && customers.length">
         <app-customer-card [customer]='customer' *ngFor="let customer of filteredCustomers"></app-customer-card>
     </div>
 </div>

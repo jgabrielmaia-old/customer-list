@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
-import { Telephone, CartCheck, Calendar2CheckFill, GeoAltFill } from 'ngx-bootstrap-icons';
+import { Telephone, CartCheck, Calendar2Check, GeoAlt, Pencil, Files } from 'ngx-bootstrap-icons';
 
 import { AppComponent } from './app.component';
 import { CustomerDataFormComponent } from './components/customer-data-form/customer-data-form.component';
@@ -25,8 +25,10 @@ registerLocaleData(localePt);
 const icons = {
   Telephone,
   CartCheck,
-  Calendar2CheckFill,
-  GeoAltFill
+  Calendar2Check,
+  GeoAlt,
+  Pencil,
+  Files
 };
 
 
