@@ -1,0 +1,11 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Cadastro de Cliente</h1>
+        <hr class="my-4"/>
+        <p class="lead">Informações básicas mas cruciais para manter contato com nossos maiores investidores</p>
+        <span>Photo by <a href="https://unsplash.com/@heftiba?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Toa Heftiba</a> on <a href="https://unsplash.com/s/photos/people?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+    </div>
+</div>
+<div class="container">
+    <app-customer-data-form [customerData]='customerData' (customerSubmit)='registerSubmit($event)'></app-customer-data-form>
+</div>

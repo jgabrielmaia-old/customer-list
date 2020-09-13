@@ -9,9 +9,10 @@ import { Telephone, CartCheck, Calendar2Check, GeoAlt, Pencil, Files } from 'ngx
 import { AppComponent } from './app.component';
 import { CustomerDataFormComponent } from './components/customer-data-form/customer-data-form.component';
 import { CustomerCardComponent } from './components/customer-card/customer-card.component';
-import { CustomerListComponent } from './components/customer-list/customer-list.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SearchComponent } from './components/search/search.component';
+
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { CustomerListComponent } from './pages/customer-list/customer-list.component';
 
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -19,6 +20,8 @@ import localePt from '@angular/common/locales/pt';
 
 import { CustomerService } from 'src/core/services/customer/customer.service';
 import { SearchParamsService } from 'src/core/services/search-params/search-params.service';
+import { CustomerEditComponent } from './pages/customer-edit/customer-edit.component';
+import { CustomerRegisterComponent } from './pages/customer-register/customer-register.component';
 
 registerLocaleData(localePt);
 
@@ -40,6 +43,8 @@ const icons = {
     CustomerListComponent,
     NotFoundComponent,
     SearchComponent,
+    CustomerEditComponent,
+    CustomerRegisterComponent,
   ],
   imports: [
     BrowserModule,

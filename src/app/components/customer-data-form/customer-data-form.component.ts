@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CustomerData } from '../../model/customer-data';
 import { NgForm } from '@angular/forms';
-import { CustomerService } from '../../../core/services/customer/customer.service' ;
 
 @Component({
   selector: 'app-customer-data-form',
@@ -10,23 +9,12 @@ import { CustomerService } from '../../../core/services/customer/customer.servic
 })
 export class CustomerDataFormComponent {
   @Input()
-  customerData : CustomerData = {
-    id: ``,
-    name: ``,
-    birth: new Date("2000-01-01"),
-    firstOrder: new Date(),
-    orderCount: 1,
-    phone: ``,
-    neighborhood: ``,
-    street: ``,
-    streetNumber: ``,
-    detail: ``
-  };
+  customerData : CustomerData;
 
-  constructor(private customerService: CustomerService) { }
+  @Output()
+  customerSubmit: EventEmitter<CustomerData> = new EventEmitter<CustomerData>();
 
-  onSubmit(form:NgForm) {
-    this.customerService.save(this.customerData);
+  customerFormSubmit(ngForm:NgForm) {
+    this.customerSubmit.emit(this.customerData);
   }
-
 }

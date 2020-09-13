@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit, Output, EventEmitter } from '@angular/core';
 import { CustomerData } from '../../model/customer-data';
 import { CustomerService } from 'src/core/services/customer/customer.service';
-import { SearchComponent } from '../search/search.component';
+import { SearchComponent } from '../../components/search/search.component';
 import { SearchParamsService } from 'src/core/services/search-params/search-params.service';
 
 @Component({

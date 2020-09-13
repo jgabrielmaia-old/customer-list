@@ -1,84 +1,74 @@
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">Cadastro de Cliente</h1>
-        <hr class="my-4"/>
-        <p class="lead">Informações básicas mas cruciais para manter contato com nossos maiores investidores</p>
-        <span>Photo by <a href="https://unsplash.com/@heftiba?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Toa Heftiba</a> on <a href="https://unsplash.com/s/photos/people?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+<form #form="ngForm" (ngSubmit)="customerFormSubmit(form)" #customerForm>
+    <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Nome</label>
+        <div class="col-sm-10">
+            <input
+                id="name"
+                name="name"
+                type="name"
+                class="form-control"
+                [(ngModel)]="customerData.name"
+                required
+                #nameField="ngModel"
+                [class.field-error]="form.submitted && nameField.invalid"/>
+            <div [hidden]="!form.submitted|| nameField.valid" class="alert alert-danger">Insira um nome</div>
+        </div>
     </div>
-</div>
-<div class="container">
-    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-        <div class="form-group row">
-            <label for="name" class="col-sm-2 col-form-label">Nome</label>
-            <div class="col-sm-10">
-                <input
-                    id="name"
-                    name="name"
-                    type="name"
-                    class="form-control"
-                    [(ngModel)]="customerData.name"
-                    required
-                    #nameField="ngModel"
-                    [class.field-error]="form.submitted && nameField.invalid"/>
-                <div [hidden]="!form.submitted|| nameField.valid" class="alert alert-danger">Insira um nome</div>
-            </div>
+    <div class="form-group row">
+        <label for="birth" class="col-sm-2 col-form-label">Nascimento</label>
+        <div class="col-sm-10">
+            <input id="birth" class="form-control" [ngModel]="customerData.birth | date:'yyyy-MM-dd'"
+                (ngModelChange)="customerData.birth = $event" type="date" name="customerData.birth" />
         </div>
-        <div class="form-group row">
-            <label for="birth" class="col-sm-2 col-form-label">Nascimento</label>
-            <div class="col-sm-10">
-                <input id="birth" class="form-control" [ngModel]="customerData.birth | date:'yyyy-MM-dd'"
-                    (ngModelChange)="customerData.birth = $event" type="date" name="customerData.birth" />
-            </div>
+    </div>
+    <div class="form-group row">
+        <label for="first-order" class="col-sm-2 col-form-label">Primeiro Pedido</label>
+        <div class="col-sm-10">
+            <input id="first-order" class="form-control" [ngModel]="customerData.firstOrder | date:'yyyy-MM-dd'"
+                (ngModelChange)="customerData.firstOrder = $event" type="date" name="customerData.firstOrder" />
         </div>
-        <div class="form-group row">
-            <label for="first-order" class="col-sm-2 col-form-label">Primeiro Pedido</label>
-            <div class="col-sm-10">
-                <input id="first-order" class="form-control" [ngModel]="customerData.firstOrder | date:'yyyy-MM-dd'"
-                    (ngModelChange)="customerData.firstOrder = $event" type="date" name="customerData.firstOrder" />
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="order-count" class="col-sm-2 col-form-label">Número de Pedidos</label>
+    </div>
+    <div class="form-group row">
+        <label for="order-count" class="col-sm-2 col-form-label">Número de Pedidos</label>
 
-            <div class="col-sm-10">
-                <input id="order-count" name="orderCount" class="form-control" [(ngModel)]="customerData.orderCount" type="number" min="0" />
-            </div>
+        <div class="col-sm-10">
+            <input id="order-count" name="orderCount" class="form-control" [(ngModel)]="customerData.orderCount" type="number" min="0" />
         </div>
-        <div class="form-group row">
-            <label for="phone" class="col-sm-2 col-form-label">Telefone</label>
-            <div class="col-sm-10">
-                <input id="phone" name="phone" class="form-control" type="tel" [(ngModel)]="customerData.phone" />
-            </div>
+    </div>
+    <div class="form-group row">
+        <label for="phone" class="col-sm-2 col-form-label">Telefone</label>
+        <div class="col-sm-10">
+            <input id="phone" name="phone" class="form-control" type="tel" [(ngModel)]="customerData.phone" />
         </div>
-        <div class="form-group row">
+    </div>
+    <div class="form-group row">
 
-            <label for="neighborhood" class="col-sm-2 col-form-label">Bairro</label>
-            <div class="col-sm-10">
-                <input id="neighborhood" name="neighborhood" class="form-control" [(ngModel)]="customerData.neighborhood" />
-            </div>
+        <label for="neighborhood" class="col-sm-2 col-form-label">Bairro</label>
+        <div class="col-sm-10">
+            <input id="neighborhood" name="neighborhood" class="form-control" [(ngModel)]="customerData.neighborhood" />
         </div>
-        <div class="form-group row">
+    </div>
+    <div class="form-group row">
 
-            <label for="street" class="col-sm-2 col-form-label">Rua</label>
+        <label for="street" class="col-sm-2 col-form-label">Rua</label>
 
-            <div class="col-sm-10">
-                <input id="street" name="street" class="form-control" [(ngModel)]="customerData.street" />
-            </div>
+        <div class="col-sm-10">
+            <input id="street" name="street" class="form-control" [(ngModel)]="customerData.street" />
         </div>
-        <div class="form-group row">
+    </div>
+    <div class="form-group row">
 
-            <label for="number" class="col-sm-2 col-form-label">Número</label>
-            <div class="col-sm-10">
-                <input id="number" name="streetNumber" class="form-control" [(ngModel)]="customerData.streetNumber" />
-            </div>
+        <label for="number" class="col-sm-2 col-form-label">Número</label>
+        <div class="col-sm-10">
+            <input id="number" name="streetNumber" class="form-control" [(ngModel)]="customerData.streetNumber" />
         </div>
-        <div class="form-group row">
-            <label for="detail" class="col-sm-2 col-form-label">Complemento</label>
-            <div class="col-sm-10">
-                <input id="detail" name="detail" class="form-control" [(ngModel)]="customerData.detail" />
+    </div>
+    <div class="form-group row">
+        <label for="detail" class="col-sm-2 col-form-label">Complemento</label>
+        <div class="col-sm-10">
+            <input id="detail" name="detail" class="form-control" [(ngModel)]="customerData.detail" />
 
-            </div>
         </div>
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
-    </form>
-</div>
+    </div>
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
+</form>
