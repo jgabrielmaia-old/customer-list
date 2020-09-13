@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CustomerData } from '../../model/customer-data';
 import { NgForm } from '@angular/forms';
 import { CustomerService } from '../../../core/services/customer/customer.service' ;
@@ -9,7 +9,7 @@ import { CustomerService } from '../../../core/services/customer/customer.servic
   styleUrls: ['./customer-data-form.component.css']
 })
 export class CustomerDataFormComponent {
-
+  @Input()
   customerData : CustomerData = {
     id: ``,
     name: ``,
@@ -26,14 +26,7 @@ export class CustomerDataFormComponent {
   constructor(private customerService: CustomerService) { }
 
   onSubmit(form:NgForm) {
-    if (form.valid) {
-      alert('Submitted');
-    }
-
-    this.customerService.postCustomerDataForm(this.customerData).subscribe(
-      result => alert('Success! ' + result),
-      error => alert('Error! ' + error)
-    );
+    this.customerService.save(this.customerData);
   }
 
 }
