@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CustomerService } from 'src/core/services/customer/customer.service';
 import { CustomerData } from '../../model/customer-data';
 
 @Component({
@@ -9,4 +10,9 @@ import { CustomerData } from '../../model/customer-data';
 export class CustomerCardComponent {
   @Input()
   customer: CustomerData;
+
+  constructor(private customerService: CustomerService) { }
+  increaseOrder(){
+    this.customerService.increaseOrder(this.customer).subscribe(s => console.log(s));
+  }
 }

@@ -21,6 +21,10 @@ li p {
     justify-content: space-between;
 }
 
+.card-title span{
+    justify-content: center;
+}
+
 .card-action {
     flex: 1;
     margin: 0 10px 0 10px;

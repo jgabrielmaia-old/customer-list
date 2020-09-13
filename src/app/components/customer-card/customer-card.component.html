@@ -1,7 +1,13 @@
 <div id="customer-card-{{customer.id}}" class="mb-3 card" style="width: 18rem;">
     <div class="card-body">
         <div class="row p-2">
-            <h4 class="card-title">{{customer.name}} <span class="badge badge-dark badge-pill ml-1 mb-1">{{customer.orderCount}}</span></h4>
+            <h4 class="card-title">
+                {{customer.name}}
+                <button class="btn btn-primary badge badge-pill ml-1 mb-1" (click)="increaseOrder()">
+                    {{customer.orderCount}}
+                    <strong>+</strong>
+                </button>
+            </h4>
             <h5 class="card-subtitle mb-2 text-muted">{{customer.birth | date:'longDate' | titlecase}}</h5>
             <ul class="card-text list-group list-group-flush">
                 <li class="list-group-item">
