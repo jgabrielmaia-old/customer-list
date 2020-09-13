@@ -1,4 +1,4 @@
-# CustomerList
+# Customer List
 
 ![Preview-Screens](./src/assets/images/readme.png)
 
