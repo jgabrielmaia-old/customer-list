@@ -1,4 +1,5 @@
 export interface CustomerData {
+    id: string,
     name: string;
     birth: Date;
     firstOrder: Date;

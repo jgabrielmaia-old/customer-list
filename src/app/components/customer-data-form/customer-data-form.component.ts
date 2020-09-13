@@ -11,6 +11,7 @@ import { CustomerService } from '../../../core/services/customer/customer.servic
 export class CustomerDataFormComponent {
 
   customerData : CustomerData = {
+    id: ``,
     name: ``,
     birth: new Date("2000-01-01"),
     firstOrder: new Date(),

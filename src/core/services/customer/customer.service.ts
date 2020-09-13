@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CustomerService {
-  private customersUrl = 'assets/data/customer.json';
+  private customersUrl = 'http://localhost:5000/api/customers';
+
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<CustomerData[]> {
